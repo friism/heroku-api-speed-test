@@ -1,0 +1,15 @@
+﻿@model IEnumerable<KeyValuePair<string, bool>>
+
+@{
+	ViewBag.Title = "Apps";
+}
+
+<h2>Apps</h2>
+<p>
+	Fetched apps in @ViewBag.TimeToFetchApps ms, fetched app states in @ViewBag.TimeToFetchAppStates ms, rendered in @ViewBag._ElapsedTime ms.
+</p>
+<ul>
+	@foreach (var pair in Model) {
+		<li>@pair.Key: @(pair.Value ? "idle" : "not idle")</li>
+	}
+</ul>
